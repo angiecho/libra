@@ -4,8 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "author": "",
+  "dependencies": {
+    "express": "4.16.2",
+    "mongodb": "^2.2.33"
+  },
+  "engines": {
+    "node": "6.9.4",
+    "npm": "3.10.10"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "survey"
+  ],
+  "author": "Angela Cho",
   "license": "ISC"
 }

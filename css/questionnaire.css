@@ -1,0 +1,10 @@
+
+/* questionnaire box
+----------------------------------------------------------
+*/
+#questionnaire-container{
+  max-width: 600px;
+  height: auto;
+  margin:auto;
+  padding: 50px;
+}
