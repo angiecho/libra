@@ -1,0 +1,78 @@
+
+/* pain indicator box
+----------------------------------------------------------
+*/
+.container{
+  min-width: 480px;
+  margin: auto;
+}
+
+.containerA{
+  position: relative;
+  max-width:600px;
+  height: auto;
+  margin: auto;
+  padding: 10px;
+}
+
+.containerB{
+  position: relative;
+  width: 600px;
+  height: auto;
+  margin:auto;
+  padding: 10px;
+}
+
+#bodyoutline {
+  position: relative;
+  margin: auto;
+  width: 478px;
+}
+
+#pain-selector{
+  width: 300px;
+  size: 3;
+  overflow:hidden;
+  white-space:pre;
+  text-overflow:ellipsis;
+  display: block;
+  margin: 0 auto;
+}
+
+#bodyimg{
+  width:478px;
+  height:169px;
+  display: block;
+  margin: 0 auto;
+
+}
+
+.painpoint:hover {
+
+}
+
+#shoulder:not(.no-hover):hover{
+  content:url('../images/icons/target.png');
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 10px;
+  left: 15px;
+}
+
+#underboob:not(.no-hover):hover{
+  content:url('../images/icons/target.png');
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 70px;
+  left: 18px;
+}
+
+#shoulder-click {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 10px;
+  left: 15px;
+}
