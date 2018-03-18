@@ -44,32 +44,41 @@ $("#surveyElement").Survey({
 });
 
 /*******************************/
-
-
-
+var lastClicked;
+var lastSaved = false;
 $('.painpoint').each(function () {
 
   $(this).click(function () {
     if ($(this).attr('clicked') == 'true'){
-      $(this).removeClass('no-hover');
-      $(this).attr('clicked', 'false');
+      //$(this).removeClass('no-hover');
+      //$(this).attr('clicked', 'false');
     }
 
     else {
       $(this).addClass('no-hover');
       $(this).attr('clicked','true');
+      if (lastSaved == false){
+        $(lastClicked).removeClass('no-hover');
+        $(lastClicked).attr('clicked', 'false');
+        $('#'+ $(lastClicked).attr('id') + 'Point').hide();
+
+      }
+      lastClicked = this;
+      $('#'+ $(this).attr('id') + 'Point').show();
 
       var $painselector = $("#pain-selector");
       var key = $(this).attr('id');
 
       switch(key){
         case 'shoulder':
+          lastSaved = false;
           survey.loadSurveyFromService ("8d8cf707-1e87-4512-9a81-10881b937c3a");
           break;
         case 'underboob':
+          lastSaved = false;
           survey.loadSurveyFromService ("756949ad-c882-4439-a930-325cd2f62e68");
           break;
-        case 'shoulder':
+        default:
           vals = ['Please select an area of pain on the image above'];
           break;
         }

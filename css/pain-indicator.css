@@ -22,7 +22,10 @@
   margin:auto;
   padding: 10px;
 }
-
+#clickbodytext{
+  font-size: 16pt;
+  padding: 0px 10px 10px 10px;
+}
 #bodyoutline {
   position: relative;
   margin: auto;
@@ -58,6 +61,14 @@
   width: 40px;
   top: 10px;
   left: 15px;
+}
+#shoulderPoint {
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  top: 10px;
+  left: 15px;
+  display:none;
 }
 
 #underboob:not(.no-hover):hover{
