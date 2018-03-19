@@ -1,0 +1,12 @@
+.resultstext{
+  width: 800px;
+  margin:auto;
+  padding: 10px;
+}
+.results  {
+  max-width: 800px;
+  position: relative;
+  padding-top: 10px;
+  margin:auto;
+  display: flex;
+}
