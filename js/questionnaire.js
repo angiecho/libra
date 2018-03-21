@@ -99,7 +99,6 @@ var json ={
    ]
   }
  ],
- showProgressBar: "bottom",
  pagePrevText: "Back",
  pageNextText: "Next",
  completeText: "Done!"
