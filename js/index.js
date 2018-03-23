@@ -11,6 +11,10 @@ var path = require('path');
 var assert = require('assert');
 var bodyParser = require('body-parser');
 
+var firebase = require("firebase/app");
+require("firebase/auth");
+require("firebase/database");
+
 var PORT = process.env.PORT || DEFAULT_PORT;
 
 
@@ -24,3 +28,14 @@ app.get("/", function(req, res){
 
 server.listen(PORT);
 console.log('Open on port:' + PORT);
+
+// Initialize Firebase
+var config = {
+	apiKey: "AIzaSyCQrETDySkdnwVHfTXmWWHDZW36jdukhDo",
+	authDomain: "libra-database.firebaseapp.com",
+	databaseURL: "https://libra-database.firebaseio.com",
+	projectId: "libra-database",
+	storageBucket: "libra-database.appspot.com",
+	messagingSenderId: "745377194271"
+};
+firebase.initializeApp(config);

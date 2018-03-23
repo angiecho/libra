@@ -1,17 +1,27 @@
 var json ={
  pages: [
   {
-   name: "page1",
+    name:"page1",
+    elements: [
+      {
+       type: "html",
+       name: "question1",
+       html: "<div style=\"height: 100px; text-align:center;height: 90px;line-height: 90px;\"> You are on your way to finding your ultimate bra fit ;) </div>"
+      }
+     ]
+  },
+  {
+   name: "page2",
    elements: [
     {
      type: "matrixdropdown",
      name: "What is your bra size?",
-     //isRequired: true,
+     isRequired: true,
      columns: [
       {
        name: "Band Size",
        cellType: "dropdown",
-       //isRequired: true,
+       isRequired: true,
        choices: [
         "30",
         "32",
@@ -24,7 +34,7 @@ var json ={
       {
        name: "Cup Size",
        cellType: "dropdown",
-       //isRequired: true,
+       isRequired: true,
        choices: [
         "AA",
         "A",
@@ -42,12 +52,13 @@ var json ={
    ]
   },
   {
-   name: "page2",
+   name: "page3",
    elements: [
     {
      type: "radiogroup",
      name: "choosesideview.",
      title: "Which shape are your breasts?",
+	 isRequired: true,
      "choices": [
         {
             "value": "Standard",
@@ -74,12 +85,13 @@ var json ={
    ]
   },
   {
-   name: "page3",
+   name: "page4",
    elements: [
     {
      type: "radiogroup",
      name: "chooseseparation.",
      title: "Which image best represents the separation of your breasts?",
+	 isRequired: true,
      "choices": [
         {
             "value": "Separated",
@@ -99,9 +111,11 @@ var json ={
    ]
   }
  ],
+
  pagePrevText: "Back",
  pageNextText: "Next",
- completeText: "Done!"
+ completeText: "Next",
+ completedHtml: "Redirecting"
 };
 
 Survey.defaultBootstrapCss.navigationButton = "btn btn-green";
@@ -111,7 +125,8 @@ Survey.Survey.cssType = "bootstrap";
 var survey = new Survey.Model(json);
 
 survey.onComplete.add(function(result) {
-	document.querySelector('#surveyResult').innerHTML = "result: " + JSON.stringify(result.data);
+	 window.location.href = "./sizing2.html";
+	 //document.querySelector('#surveyResult').innerHTML = "result: " + JSON.stringify(result.data);
 });
 
 var converter = new showdown.Converter();
