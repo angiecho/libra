@@ -7,9 +7,12 @@
     "start": "node js/index.js"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
     "express": "4.16.2",
     "firebase": "^4.12.0",
-    "mongodb": "^2.2.33"
+    "mongodb": "^2.2.33",
+    "mysql": "^2.15.0"
   },
   "engines": {
     "node": "6.9.4",

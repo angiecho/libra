@@ -57,33 +57,133 @@
 #shoulder:not(.no-hover):hover{
   content:url('../images/icons/target.png');
   position: absolute;
-  height: 40px;
-  width: 40px;
-  top: 10px;
-  left: 15px;
+  height: 32px;
+  width: 41px;
+  top: 11px;
+  left: 23px;
 }
 #shoulderPoint {
   position: absolute;
-  height: 40px;
+  height: 32px;
+  width: 41px;
+  top: 11px;
+  left: 23px;
+  display:none;
+}
+
+#shoulder2:not(.no-hover):hover{
+  content:url('../images/icons/target.png');
+  position: absolute;
+  height: 36px;
   width: 40px;
-  top: 10px;
-  left: 15px;
+  top: 7px;
+  left: 118px;
+}
+#shoulder2Point {
+  position: absolute;
+  height: 36px;
+  width: 40px;
+  top: 7px;
+  left: 118px;
+  display:none;
+}
+
+#shoulder3:not(.no-hover):hover{
+  content:url('../images/icons/target.png');
+  position: absolute;
+  height: 36px;
+  width: 41px;
+  top: 17px;
+  left: 301px;
+}
+#shoulder3Point {
+  position: absolute;
+  height: 36px;
+  width: 41px;
+  top: 17px;
+  left: 301px;
+  display:none;
+}
+
+#shoulder4:not(.no-hover):hover{
+  content:url('../images/icons/target.png');
+  position: absolute;
+  height: 36px;
+  width: 37px;
+  top: 13px;
+  left: 386px;
+}
+#shoulder4Point {
+  position: absolute;
+  height: 36px;
+  width: 37px;
+  top: 13px;
+  left: 386px;
   display:none;
 }
 
 #underboob:not(.no-hover):hover{
   content:url('../images/icons/target.png');
   position: absolute;
-  height: 40px;
-  width: 40px;
-  top: 70px;
-  left: 18px;
+  height: 39px;
+  width: 75px;
+  top: 60px;
+  left: 57px;
+}
+#underboobPoint {
+  position: absolute;
+  height: 39px;
+  width: 75px;
+  top: 60px;
+  left: 57px;
+  display:none;
 }
 
-#shoulder-click {
+#neck:not(.no-hover):hover{
+  content:url('../images/icons/target.png');
   position: absolute;
-  height: 40px;
+  height: 51px;
   width: 40px;
-  top: 10px;
-  left: 15px;
+  top: 0px;
+  left: 344px;
+}
+#neckPoint {
+  position: absolute;
+  height: 51px;
+  width: 40px;
+  top: 0px;
+  left: 344px;
+  display:none;
+}
+#back:not(.no-hover):hover{
+  content:url('../images/icons/target.png');
+  position: absolute;
+  height: 30px;
+  width: 91px;
+  top: 75px;
+  left: 319px;
+}
+#backPoint {
+  position: absolute;
+  height: 30px;
+  width: 91px;
+  top: 75px;
+  left: 319px;
+  display:none;
+}
+#collar:not(.no-hover):hover{
+  content:url('../images/icons/target.png');
+  position: absolute;
+  height: 34px;
+  width: 45px;
+  top: 22px;
+  left: 71px;
+}
+#collarPoint {
+  position: absolute;
+  height: 34px;
+  width: 45px;
+  top: 22px;
+  left: 71px;
+  display:none;
 }

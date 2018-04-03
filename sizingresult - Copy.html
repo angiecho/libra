@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Home</title>
+	<title>Get Sized</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->
@@ -25,16 +25,25 @@
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
 <!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/lightbox2/css/lightbox.min.css">
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/surveyresults.css">
 <!--===============================================================================================-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.6.4/showdown.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://surveyjs.azureedge.net/1.0.14/survey.jquery.min.js"></script>
+	<link href="https://surveyjs.azureedge.net/1.0.14/survey.css" type="text/css" rel="stylesheet" />
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/image-picker/0.3.0/image-picker.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/image-picker/0.3.0/image-picker.css"/>
+  <script src="https://unpkg.com/surveyjs-widgets"></script>
+
+	<script src="js/results.js"></script>
+<!--===============================================================================================-->
+
 </head>
 <body class="animsition">
 
@@ -88,7 +97,15 @@
 							</li>
 
 							<li>
+								<a href="product.html">Shop</a>
+							</li>
+
+							<li>
 								<a href="cart.html">Features</a>
+							</li>
+
+							<li>
+								<a href="blog.html">Blog</a>
 							</li>
 
 							<li>
@@ -117,35 +134,7 @@
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
 							<ul class="header-cart-wrapitem">
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-01.jpg" alt="IMG">
-									</div>
 
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-02.jpg" alt="IMG">
-									</div>
-
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-03.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Nixon Porter Leather Watch In Tan
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $17.00
-										</span>
-									</div>
-								</li>
 							</ul>
 
 							<div class="header-cart-total">
@@ -197,36 +186,7 @@
 						<!-- Header cart noti -->
 						<div class="header-cart header-dropdown">
 							<ul class="header-cart-wrapitem">
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-01.jpg" alt="IMG">
-									</div>
 
-
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-02.jpg" alt="IMG">
-									</div>
-
-								</li>
-
-								<li class="header-cart-item">
-									<div class="header-cart-item-img">
-										<img src="images/item-cart-03.jpg" alt="IMG">
-									</div>
-
-									<div class="header-cart-item-txt">
-										<a href="#" class="header-cart-item-name">
-											Nixon Porter Leather Watch In Tan
-										</a>
-
-										<span class="header-cart-item-info">
-											1 x $17.00
-										</span>
-									</div>
-								</li>
 							</ul>
 
 							<div class="header-cart-total">
@@ -304,7 +264,15 @@
 					</li>
 
 					<li class="item-menu-mobile">
+						<a href="product.html">Shop</a>
+					</li>
+
+					<li class="item-menu-mobile">
 						<a href="cart.html">Features</a>
+					</li>
+
+					<li class="item-menu-mobile">
+						<a href="blog.html">Blog</a>
 					</li>
 
 					<li class="item-menu-mobile">
@@ -319,236 +287,109 @@
 		</div>
 	</header>
 
-	<!-- Slide1 -->
-	<section class="slide1">
-		<div class="wrap-slick1">
-			<div class="slick1">
-				<!--div class="item-slick1 item1-slick1" style="background-color = black">
-					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-						<div class = "videoContainer">
-							<video id="promo" autoplay>
-								<source src="media/libra-promo.mp4" type="video/mp4">
-							</video>
-						</div>
-					</div>
-				</div-->
-				<div class="item-slick1 item1-slick1" style="background-image: url(images/banner/3-steps.jpg);">
-					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-						<span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="fadeInDown">
+	<!-- Product Detail -->
+	<!-- Product -->
+	<div class = "resultstext">Here are our suggestions... </div>
+	<div class="results">
+		<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
+			<!-- Block2 -->
+			<div class="block2">
+				<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
+					<img src="images/bras/001.jpg" alt="IMG-PRODUCT">
 
-						</span>
+					<div class="block2-overlay trans-0-4">
+						<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+							<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+							<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+						</a>
 
-						<h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="fadeInUp">
-
-						</h2>
-
-						<div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="zoomIn">
+						<div class="block2-btn-addcart w-size1 trans-0-4">
 							<!-- Button -->
-							<a href="sizing.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-								Get Sized Now
-							</a>
+							<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+								Add to Cart
+							</button>
 						</div>
 					</div>
 				</div>
 
-				<div class="item-slick1 item3-slick1" style="background-image: url(images/banner/libra.jpg);">
-					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-						<!--span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
-							Women Collection 2018
-						</span-->
+				<div class="block2-txt p-t-20">
+					<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+						Knix V-Neck Evolution Bra in: 34D
+					</a>
 
-						<!--h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="rotateInUpRight">
-							New arrivals
-						</h2-->
+					<span class="block2-price m-text6 p-r-5">
+						$65.00
+					</span>
+				</div>
+			</div>
+		</div>
 
-						<div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn" style="padding-top:100px">
+		<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
+			<!-- Block2 -->
+			<div class="block2">
+				<div class="block2-img wrap-pic-w of-hidden pos-relative">
+					<img src="images/bras/002.jpg" alt="IMG-PRODUCT">
+
+					<div class="block2-overlay trans-0-4">
+						<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+							<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+							<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+						</a>
+
+						<div class="block2-btn-addcart w-size1 trans-0-4">
 							<!-- Button -->
-							<a href="sizing.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-								Get Sized Now
-							</a>
+							<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+								Add to Cart
+							</button>
 						</div>
 					</div>
 				</div>
 
-				<div class="item-slick1 item3-slick1" style="background-image: url(images/banner/findyourbestfit.jpg);">
-					<div class="wrap-content-slide1 sizefull flex-col-c-m p-l-15 p-r-15 p-t-150 p-b-170">
-						<!--span class="caption1-slide1 m-text1 t-center animated visible-false m-b-15" data-appear="rotateInDownLeft">
-							Women Collection 2018
-						</span-->
+				<div class="block2-txt p-t-20">
+					<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+						PANACHE Tango Balconette Bra in: 36C
+					</a>
 
-						<!--h2 class="caption2-slide1 xl-text1 t-center animated visible-false m-b-37" data-appear="rotateInUpRight">
-							New arrivals
-						</h2-->
+					<span class="block2-price m-text6 p-r-5">
+						$86.42
+					</span>
+				</div>
+			</div>
+		</div>
 
-						<div class="wrap-btn-slide1 w-size1 animated visible-false" data-appear="rotateIn" style="padding-top:100px">
+		<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
+			<!-- Block2 -->
+			<div class="block2">
+				<div class="block2-img wrap-pic-w of-hidden pos-relative">
+					<img src="images/bras/003.jpg" alt="IMG-PRODUCT">
+
+					<div class="block2-overlay trans-0-4">
+						<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
+							<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
+							<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
+						</a>
+
+						<div class="block2-btn-addcart w-size1 trans-0-4">
 							<!-- Button -->
-							<a href="sizing.html" class="flex-c-m size2 bo-rad-23 s-text2 bgwhite hov1 trans-0-4">
-								Get Sized Now
-							</a>
+							<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
+								Add to Cart
+							</button>
 						</div>
 					</div>
 				</div>
 
+				<div class="block2-txt p-t-20">
+					<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
+						GLAMORISE Wondewire Front-Close Bra in: 32D
+					</a>
+
+					<span class="block2-price m-text6 p-r-5">
+						$68.58
+					</span>
+				</div>
 			</div>
 		</div>
-	</section>
-
-	<!-- Instagram -->
-	<!--section class="instagram p-t-20">
-		<div class="sec-title p-b-52 p-l-15 p-r-15">
-			<h3 class="m-text5 t-center">
-				@ follow us on Instagram
-			</h3>
-		</div-->
-
-		<!--div class="flex-w"-->
-			<!-- Block4 -->
-			<!--div class="block4 wrap-pic-w">
-				<img src="images/gallery-03.jpg" alt="IMG-INSTAGRAM">
-
-				<a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
-					<span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
-						<i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
-						<span class="p-t-2">39</span>
-					</span>
-
-					<div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
-						<p class="s-text10 m-b-15 h-size1 of-hidden">
-							Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
-						</p>
-
-						<span class="s-text9">
-							Photo by @nancyward
-						</span>
-					</div>
-				</a>
-			</div-->
-
-			<!-- Block4 -->
-			<!--div class="block4 wrap-pic-w">
-				<img src="images/gallery-07.jpg" alt="IMG-INSTAGRAM">
-
-				<a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
-					<span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
-						<i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
-						<span class="p-t-2">39</span>
-					</span>
-
-					<div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
-						<p class="s-text10 m-b-15 h-size1 of-hidden">
-							Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
-						</p>
-
-						<span class="s-text9">
-							Photo by @nancyward
-						</span>
-					</div>
-				</a>
-			</div-->
-
-			<!-- Block4 -->
-			<!--div class="block4 wrap-pic-w">
-				<img src="images/gallery-09.jpg" alt="IMG-INSTAGRAM">
-
-				<a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
-					<span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
-						<i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
-						<span class="p-t-2">39</span>
-					</span>
-
-					<div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
-						<p class="s-text10 m-b-15 h-size1 of-hidden">
-							Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
-						</p>
-
-						<span class="s-text9">
-							Photo by @nancyward
-						</span>
-					</div>
-				</a>
-			</div-->
-
-			<!-- Block4 -->
-			<!--div class="block4 wrap-pic-w">
-				<img src="images/gallery-13.jpg" alt="IMG-INSTAGRAM">
-
-				<a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
-					<span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
-						<i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
-						<span class="p-t-2">39</span>
-					</span>
-
-					<div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
-						<p class="s-text10 m-b-15 h-size1 of-hidden">
-							Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
-						</p>
-
-						<span class="s-text9">
-							Photo by @nancyward
-						</span>
-					</div>
-				</a>
-			</div-->
-
-			<!-- Block4 -->
-			<!--div class="block4 wrap-pic-w">
-				<img src="images/gallery-15.jpg" alt="IMG-INSTAGRAM">
-
-				<a href="#" class="block4-overlay sizefull ab-t-l trans-0-4">
-					<span class="block4-overlay-heart s-text9 flex-m trans-0-4 p-l-40 p-t-25">
-						<i class="icon_heart_alt fs-20 p-r-12" aria-hidden="true"></i>
-						<span class="p-t-2">39</span>
-					</span>
-
-					<div class="block4-overlay-txt trans-0-4 p-l-40 p-r-25 p-b-30">
-						<p class="s-text10 m-b-15 h-size1 of-hidden">
-							Nullam scelerisque, lacus sed consequat laoreet, dui enim iaculis leo, eu viverra ex nulla in tellus. Nullam nec ornare tellus, ac fringilla lacus. Ut sit amet enim orci. Nam eget metus elit.
-						</p>
-
-						<span class="s-text9">
-							Photo by @nancyward
-						</span>
-					</div>
-				</a>
-			</div>
-		</div>
-	</section-->
-
-	<!-- Shipping -->
-	<!--section class="shipping bgwhite p-t-62 p-b-46">
-		<div class="flex-w p-l-15 p-r-15">
-			<div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
-				<h4 class="m-text12 t-center">
-					Free Delivery Worldwide
-				</h4>
-
-				<a href="#" class="s-text11 t-center">
-					Click here for more info
-				</a>
-			</div>
-
-			<div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 bo2 respon2">
-				<h4 class="m-text12 t-center">
-					30 Days Return
-				</h4>
-
-				<span class="s-text11 t-center">
-					Simply return it within 30 days for an exchange.
-				</span>
-			</div>
-
-			<div class="flex-col-c w-size5 p-l-15 p-r-15 p-t-16 p-b-15 respon1">
-				<h4 class="m-text12 t-center">
-					Store Opening
-				</h4>
-
-				<span class="s-text11 t-center">
-					Shop open from Monday to Sunday
-				</span>
-			</div>
-		</div>
-	</section-->
-
+	</div>
 
 	<!-- Footer -->
 	<footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
@@ -727,8 +568,9 @@
 		</span>
 	</div>
 
-	<!-- Container Selection1 -->
+	<!-- Container Selection -->
 	<div id="dropDownSelect1"></div>
+	<div id="dropDownSelect2"></div>
 
 
 
@@ -746,14 +588,15 @@
 			minimumResultsForSearch: 20,
 			dropdownParent: $('#dropDownSelect1')
 		});
+
+		$(".selection-2").select2({
+			minimumResultsForSearch: 20,
+			dropdownParent: $('#dropDownSelect2')
+		});
 	</script>
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
 	<script type="text/javascript" src="js/slick-custom.js"></script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script type="text/javascript" src="vendor/lightbox2/js/lightbox.min.js"></script>
 <!--===============================================================================================-->
 	<script type="text/javascript" src="vendor/sweetalert/sweetalert.min.js"></script>
 	<script type="text/javascript">
@@ -766,6 +609,13 @@
 
 		$('.block2-btn-addwishlist').each(function(){
 			var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+			$(this).on('click', function(){
+				swal(nameProduct, "is added to wishlist !", "success");
+			});
+		});
+
+		$('.btn-addcart-product-detail').each(function(){
+			var nameProduct = $('.product-detail-name').html();
 			$(this).on('click', function(){
 				swal(nameProduct, "is added to wishlist !", "success");
 			});

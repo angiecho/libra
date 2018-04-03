@@ -200,5 +200,30 @@
         $('.video-mo-01').children('iframe')[0].src = srcOld;
         $('.video-mo-01').css('opacity','0');
     });
+	
+	$('.slick1').on('init', function(ev, el){
+		$('video').each(function () {
+			this.play();
+			$('.slick1').slick('slickPause');
+		});
+		
+	});
+
+
+	$('.slick1').slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: true,
+		autoplaySpeed: 500,
+		adaptiveHeight: true
+	});
+	
+	$('#promo').on('ended',function(){           
+		console.log('Video Complete');
+		$('.slick1').slick('slickPlay');
+	});
+
+
 
 })(jQuery);

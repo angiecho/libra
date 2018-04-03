@@ -36,6 +36,7 @@
 
 	<script src="https://surveyjs.azureedge.net/1.0.14/survey.jquery.min.js"></script>
 	<link href="https://surveyjs.azureedge.net/1.0.14/survey.css" type="text/css" rel="stylesheet" />
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <!--===============================================================================================-->
 
 </head>
@@ -91,15 +92,7 @@
 							</li>
 
 							<li>
-								<a href="product.html">Shop</a>
-							</li>
-
-							<li>
 								<a href="cart.html">Features</a>
-							</li>
-
-							<li>
-								<a href="blog.html">Blog</a>
 							</li>
 
 							<li>
@@ -258,15 +251,7 @@
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="product.html">Shop</a>
-					</li>
-
-					<li class="item-menu-mobile">
 						<a href="cart.html">Features</a>
-					</li>
-
-					<li class="item-menu-mobile">
-						<a href="blog.html">Blog</a>
 					</li>
 
 					<li class="item-menu-mobile">
@@ -284,26 +269,52 @@
 	<!-- Product Detail -->
 	<section class="container">
 		<div class ="containerA">
-			<div id="clickbodytext">Please click on an area of pain </div>
+			<div id="clickbodytext">* Please click on an area of pain </div>
 			<div id="bodyoutline">
 				<img id="bodyimg" class="img-responsive body-empty" src="images/frontback.png" usemap="#bodymap">
 				<map name="bodymap">
-					<area class="painpoint" id="shoulder" shape="rect" coords="12,9,62,60" href="#" clicked = "false">
-					<area class="painpoint" id="underboob" shape="rect" coords="25,80,75,120" href="#" clicked = "false">
-					<area class="painpoint" id="gap" shape="rect" coords="100,25,125,70" href="#" clicked = "false">
-					<area class="painpoint" id="sides" shape="rect" coords="100,80,125,105" href="#" clicked = "false">
+					<area class="painpoint" id="shoulder" shape="rect" coords="23,11,64,43" href="#" clicked = "false">
+					<area class="painpoint" id="shoulder2" shape="rect" coords="118,7,158,43" href="#" clicked = "false">
+					<area class="painpoint" id="shoulder3" shape="rect" coords="301,17,342,53" href="#" clicked = "false">
+					<area class="painpoint" id="shoulder4" shape="rect" coords="386,13,423,49" href="#" clicked = "false">
+					<area class="painpoint" id="underboob" shape="rect" coords="57,60,132,99" href="#" clicked = "false">
+					<area class="painpoint" id="neck" shape="rect" coords="344,0,384,51" href="#" clicked = "false">
+					<area class="painpoint" id="back" shape="rect" coords="319,75,410,105" href="#" clicked = "false">
+					<area class="painpoint" id="collar" shape="rect" coords="71,22,116,56" href="#" clicked = "false">
 				</map>
 				<img id = "shoulderPoint" src="images/icons/target.png">
+				<img id = "shoulder2Point" src="images/icons/target.png">
+				<img id = "shoulder3Point" src="images/icons/target.png">
+				<img id = "shoulder4Point" src="images/icons/target.png">
+				<img id = "underboobPoint" src="images/icons/target.png">
+				<img id = "neckPoint" src="images/icons/target.png">
+				<img id = "backPoint" src="images/icons/target.png">
+				<img id = "collarPoint" src="images/icons/target.png">
 			</div>
 		</div>
-
 		<div class = "containerB">
 			<div id="surveyContainer">
 				<div id="surveyElement"></div>
-				<div id="result"></div>
       </div>
 		</div>
-
+		<div class = "containerB">
+			<div style="padding-left:20px">Your Pains:</div>
+			<ul id="dynamic-list" style="padding-left:20px">
+				<template id = "painsTemplate">
+					<li class = "painsList" style="border: 1px solid black;">
+						<span class="painArea"> </span>
+						<span class="painName"> </span>
+						<span class="painRate"> </span>
+						<input type="button" class= "removePain" value="Remove"/>
+					</li>
+				</template>
+			</ul>
+		</div>
+		<div class = "containerB">
+			<div style="padding-left:20px">
+				<button class="swal-button" id="completeSizing">Show me my bras!</button>
+      </div>
+		</div>
 		<script src="js/pain-indicator.js"></script>
 
 	</section>
@@ -329,38 +340,6 @@
 						<a href="#" class="fs-18 color1 p-r-20 fa fa-youtube-play"></a>
 					</div>
 				</div>
-			</div>
-
-			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
-				<h4 class="s-text12 p-b-30">
-					Categories
-				</h4>
-
-				<ul>
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Men
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Women
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Dresses
-						</a>
-					</li>
-
-					<li class="p-b-9">
-						<a href="#" class="s-text7">
-							Sunglasses
-						</a>
-					</li>
-				</ul>
 			</div>
 
 			<div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">

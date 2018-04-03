@@ -40,8 +40,7 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/image-picker/0.3.0/image-picker.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/image-picker/0.3.0/image-picker.css"/>
   <script src="https://unpkg.com/surveyjs-widgets"></script>
-
-	<script src="js/questionnaire.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <!--===============================================================================================-->
 
 </head>
@@ -97,15 +96,7 @@
 							</li>
 
 							<li>
-								<a href="product.html">Shop</a>
-							</li>
-
-							<li>
 								<a href="cart.html">Features</a>
-							</li>
-
-							<li>
-								<a href="blog.html">Blog</a>
 							</li>
 
 							<li>
@@ -264,15 +255,7 @@
 					</li>
 
 					<li class="item-menu-mobile">
-						<a href="product.html">Shop</a>
-					</li>
-
-					<li class="item-menu-mobile">
 						<a href="cart.html">Features</a>
-					</li>
-
-					<li class="item-menu-mobile">
-						<a href="blog.html">Blog</a>
 					</li>
 
 					<li class="item-menu-mobile">
@@ -290,106 +273,19 @@
 	<!-- Product Detail -->
 	<!-- Product -->
 	<div class = "resultstext">Here are our suggestions... </div>
-	<div class="results">
-		<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
-			<!-- Block2 -->
-			<div class="block2">
-				<div class="block2-img wrap-pic-w of-hidden pos-relative block2-labelnew">
-					<img src="images/bras/001.jpg" alt="IMG-PRODUCT">
-
-					<div class="block2-overlay trans-0-4">
-						<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-							<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-							<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-						</a>
-
-						<div class="block2-btn-addcart w-size1 trans-0-4">
-							<!-- Button -->
-							<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-								Add to Cart
-							</button>
-						</div>
-					</div>
-				</div>
-
-				<div class="block2-txt p-t-20">
-					<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-						Knix V-Neck Evolution Bra in: 34D
-					</a>
-
-					<span class="block2-price m-text6 p-r-5">
-						$65.00
-					</span>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
-			<!-- Block2 -->
-			<div class="block2">
-				<div class="block2-img wrap-pic-w of-hidden pos-relative">
-					<img src="images/bras/002.jpg" alt="IMG-PRODUCT">
-
-					<div class="block2-overlay trans-0-4">
-						<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-							<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-							<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-						</a>
-
-						<div class="block2-btn-addcart w-size1 trans-0-4">
-							<!-- Button -->
-							<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-								Add to Cart
-							</button>
-						</div>
-					</div>
-				</div>
-
-				<div class="block2-txt p-t-20">
-					<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-						PANACHE Tango Balconette Bra in: 36C
-					</a>
-
-					<span class="block2-price m-text6 p-r-5">
-						$86.42
-					</span>
-				</div>
-			</div>
-		</div>
-
-		<div class="col-sm-12 col-md-6 col-lg-4 p-b-50">
-			<!-- Block2 -->
-			<div class="block2">
-				<div class="block2-img wrap-pic-w of-hidden pos-relative">
-					<img src="images/bras/003.jpg" alt="IMG-PRODUCT">
-
-					<div class="block2-overlay trans-0-4">
-						<a href="#" class="block2-btn-addwishlist hov-pointer trans-0-4">
-							<i class="icon-wishlist icon_heart_alt" aria-hidden="true"></i>
-							<i class="icon-wishlist icon_heart dis-none" aria-hidden="true"></i>
-						</a>
-
-						<div class="block2-btn-addcart w-size1 trans-0-4">
-							<!-- Button -->
-							<button class="flex-c-m size1 bg4 bo-rad-23 hov1 s-text1 trans-0-4">
-								Add to Cart
-							</button>
-						</div>
-					</div>
-				</div>
-
-				<div class="block2-txt p-t-20">
-					<a href="product-detail.html" class="block2-name dis-block s-text3 p-b-5">
-						GLAMORISE Wondewire Front-Close Bra in: 32D
-					</a>
-
-					<span class="block2-price m-text6 p-r-5">
-						$68.58
-					</span>
-				</div>
-			</div>
-		</div>
+	<div id ="results">
+		<ul id="dynamic-list" style="padding-left:20px">
+			<template id = "brasTemplate">
+				<li class = "brasList" style="border: 1px solid black;">
+					<span class="brand"> </span>
+					<span class="name"> </span>
+					<span class="band"> </span>
+					<span class="cup"> </span>
+				</li>
+			</template>
+		</ul>
 	</div>
+	<script src="js/results.js"></script>
 
 	<!-- Footer -->
 	<footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">

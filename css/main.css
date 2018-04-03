@@ -1360,6 +1360,7 @@ li.sale-noti > a {
   position: relative;
   margin: auto;
   padding: 10px;
+  height: 570;
 }
 
 .item-slick1 {
@@ -1367,6 +1368,13 @@ li.sale-noti > a {
   background-repeat: no-repeat;
   background-position: center center;
 }
+
+.item {
+  left: 50%;
+  height: 100%;
+  margin: auto;
+}
+
 
 .arrow-slick1 {
   display: -webkit-box;
