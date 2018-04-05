@@ -31,6 +31,12 @@ con.connect(function(err) {
 app.use(express.static(__dirname + '/../'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+app.use(function(req, res, next){
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET', 'POST, PUT', 'OPTIONS');
+    res.header("Access-Control-Allow-Headers", "POST, Origin, X-Requested-With, Content-Type, Accept, Authorization");
+    next();
+});
 app.use(bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded())
 app.use(bodyParser.urlencoded({
@@ -48,6 +54,10 @@ app.get("/measurement", function(req, res){
     if (err) throw err;
     res.json(result);
   })
+});
+
+app.get("/test", function(req, res){
+    res.json({"Success": true});
 });
 
 app.get("/bras", function(req, res){

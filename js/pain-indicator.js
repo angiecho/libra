@@ -73,8 +73,10 @@ $('#completeSizing').click(function(e){
     .then(function(response){
       console.log(response.data);
       window.location.href = '/sizingresult.html?dbID=' + dbID;
+    })
+    .catch(function(error){
+      console.log(error);
     });
-
 })
 
 /*******************************/
