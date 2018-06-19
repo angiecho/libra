@@ -19,14 +19,14 @@ function getBras(band, cup, isPregnant, isFeeding, side, front, pain){
   console.log("GETTING BRAS FROM URLS")
   if (isPregnant, isFeeding){
     console.log("Maternity Bras")
-    axios.get('http://localhost:5000/maternity', {
+    axios.get('/maternity', {
       params: {
         cup: cup
       }
     })
       .then(function(response){
         if(response.data.length == 0){
-            axios.get('http://localhost:5000/bras', {
+            axios.get('/bras', {
               params : {
                 band: band,
                 cup: cup
@@ -39,8 +39,8 @@ function getBras(band, cup, isPregnant, isFeeding, side, front, pain){
               else{
                 for(var i = 0; i < response.data.length; i++){
                   var curBra = response.data[i];
-                  addBra(curBra["BRA_STYLE"], curBra["BRAND"], curBra["BRA_NAME"],
-                    curBra["MIN_PRICE"]);
+                  addBra(curBra["BRAND"], curBra["BRA_NAME"], curBra["CUP_SIZE"],
+                    curBra["BAND_SIZE"]);
                 }
               }
             }).catch(function(error){
@@ -50,8 +50,8 @@ function getBras(band, cup, isPregnant, isFeeding, side, front, pain){
         console.log(response.data)
         for(var i = 0; i < response.data.length; i++){
           var curBra = response.data[i];
-          addBra(curBra["BRA_STYLE"], curBra["BRAND"], curBra["BRA_NAME"],
-            curBra["MIN_PRICE"]);
+          addBra(curBra["BRAND"], curBra["BRA_NAME"], curBra["CUP_SIZE"],
+            curBra["BAND_SIZE"]);
         }
     })
     .catch(function(error){
@@ -59,7 +59,7 @@ function getBras(band, cup, isPregnant, isFeeding, side, front, pain){
     });
   }
   else{
-      axios.get('http://localhost:5000/bras', {
+      axios.get('/bras', {
         params : {
           band: band,
           cup: cup
@@ -71,8 +71,8 @@ function getBras(band, cup, isPregnant, isFeeding, side, front, pain){
         else{
           for(var i = 0; i < response.data.length; i++){
             var curBra = response.data[i];
-            addBra(curBra["BRA_STYLE"], curBra["BRAND"], curBra["BRA_NAME"],
-              curBra["MIN_PRICE"]);
+            addBra(curBra["BRAND"], curBra["BRA_NAME"], curBra["CUP_SIZE"],
+              curBra["BAND_SIZE"]);
           }
         }
       }).catch(function(error){
@@ -81,28 +81,28 @@ function getBras(band, cup, isPregnant, isFeeding, side, front, pain){
   }
 }
 
-function addBra(style, brand, name, price){
-  var ul = document.getElementById("results-list");
-  var listStart = "<l1>";
+function addBra(brand, name, cup, band){
+  var ul = document.getElementById('results-list');
+  var newBra = document.getElementById('bra-template').content.cloneNode(true);
+  var listElem = newBra.querySelector('.bra-item');
 
-  listStart = listStart + "<h2>" + style + "</h2>";
-  listStart = listStart + "<h2>" + brand + "</h2>";
-  listStart = listStart + "<h2>" + name + "</h2>";
-  listStart = listStart + "<h2>" + price + "</h2>";
-  listStart += "</l1>";
+  newBra.querySelector('.brand').innerText = brand;
+  newBra.querySelector('.bra-name').innerText = name;
+  newBra.querySelector('.bra-size').innerText = "in "+band+cup;
 
-  $("#results-list").append(listStart);
+  ul.appendChild(newBra);
+
 }
 
 $(document).ready(function(){
-  axios.get('http://localhost:5000/test')
+  axios.get('/test')
   .then(function(response){
     console.log(response)
   }).catch(function(error){
     console.log(error);
   })
   console.log("Getting your bras:")
-  axios.get('http://localhost:5000/measurement', {
+  axios.get('/measurement', {
     params: {
       dbID: dbID
     }

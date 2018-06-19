@@ -16,60 +16,63 @@ var surveyjson = {
    elements: [
     {
      type: "dropdown",
-     name: "question2",
+     name: "age",
      title: "What is your age range?",
      isRequired: true,
      choices: [
       {
-       value: "item1",
+       value: "1",
        text: "18 ~29"
       },
       {
-       value: "item3",
+       value: "2",
        text: "30~40"
       },
       {
-       value: "item4",
+       value: "3",
        text: "40~50"
       },
       {
-       value: "item5",
+       value: "4",
        text: "50~60"
       },
       {
-       value: "item6",
+       value: "5",
        text: "60<"
       }
      ]
     },
     {
      type: "checkbox",
-     name: "Please choose all that apply",
-     isRequired: true,
+     name: "maternity",
+     title: "Please choose all that apply",
+     isRequired: false,
      choices: [
       {
-       value: "item1",
+       value: "isPregnant",
        text: "Pregnant"
       },
       {
-       value: "item2",
+       value: "isFeeding",
        text: "Currently Breast-Feeding"
       },
       {
-       value: "item3",
+       value: "wasPregnant",
        text: "Previously pregnant and/or have breast-fed"
       }
      ]
     },
     {
      type: "matrixdropdown",
-     name: "What is your bra size?",
-     isRequired: true,
+     title: "What is your bra size?",
+     name: "size",
+     isRequired: false,
      columns: [
       {
-       name: "Band Size",
-       cellType: "dropdown",
-       isRequired: true,
+        title: "Band Size",
+        name: "band",
+        cellType: "dropdown",
+        isRequired: true,
        choices: [
         "30",
         "32",
@@ -83,9 +86,10 @@ var surveyjson = {
        ]
       },
       {
-       name: "Cup Size",
-       cellType: "dropdown",
-       isRequired: true,
+        title: "Cup Size",
+        name: "cup",
+        cellType: "dropdown",
+        isRequired: true,
        choices: [
         "AA",
         "A",
@@ -99,10 +103,7 @@ var surveyjson = {
       }
      ],
      rows: [
-      {
-       value: "bra_size",
-       text: "Please select:"
-      }
+      "row1"
      ]
     },
     {
